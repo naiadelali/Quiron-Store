@@ -3,8 +3,6 @@
 
 @foreach (var p in Model.Produtos)
 {
-    <h3>@p.Nome</h3>
-    @p.Descricao
-    <h3>@p.Preco.ToString("c")</h3>
+    @Html.Partial("_ProdutoDetalhes",p)
 }
 @Html.PageLinks(Model.Paginacao, x => Url.Action("ListaProdutos", new { pagina = x }))
