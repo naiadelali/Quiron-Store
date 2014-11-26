@@ -25,6 +25,7 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
                     tag.AddCssClass("btn-primary");
                 }
                 tag.AddCssClass("btn btn-default");
+                tag.InnerHtml=i.ToString();
                 resultado.Append(tag);
 
             }
