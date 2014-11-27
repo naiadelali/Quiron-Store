@@ -51,7 +51,7 @@ namespace Quiron.LojaVirtual.Web
             //Rota 4 - Resultado = /Categoria/Pagina
             routes.MapRoute(
                 null,
-                "{categoria}Pagina{pagina}",
+                "{categoria}/Pagina{pagina}",
                 new
                     {
                         controller = "Vitrine",
