@@ -1,24 +1,22 @@
 ﻿@model IEnumerable<string>
+           
+@Html.ActionLink("Todos os Produtos", "ListaProdutos","Vitrine",null ,new{@class="btn btn-block btn-default btn-large"})
 
-@Html.ActionLink("Todos os Produtos",
-"ListaProdutos",
-"Vitrine",
-null,
-new { @class = "btn btn-block btn-default btn-large" })
-
-@foreach (var link in Model)
+@foreach (string link in Model)
 {
-    @Html.RouteLink(link, new
-    {
-        controller = "Vitrine",
-        action = "ListaProdutos",
-        categoria = link,
-        pagina = 1
-    }, new
-        {
-            @class = "btn btn-block btn-default btn-large" +
-            (link == ViewBag.CategoriaSelecionada ? " btn-primary" : "")
-        })
+    @Html.RouteLink(link,
+            new { controller = "Vitrine", 
+                action = "ListaProdutos",
+                categoria = link,
+                pagina=1},
+            new
+            {
+                @class="btn btn-block btn-default btn-large"+
+                (link == ViewBag.CategoriaSelecionada?" btn-primary selected":"")
+            }
+    )
 }
 
-
+@*- Faça uma view que receba uma lista de strings de categorias e:
+- Crie um botão para exibir todos os produtos
+- Crie botões para cada categoria da lista*@

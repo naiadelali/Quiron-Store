@@ -34,5 +34,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
 
             return View(model);
         }
+
+
     }
 }

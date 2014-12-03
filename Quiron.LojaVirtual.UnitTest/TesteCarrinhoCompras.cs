@@ -183,5 +183,6 @@ namespace Quiron.LojaVirtual.UnitTest
 
             Assert.AreEqual(itemCarrinhos.Length,0);
         }
+
     }
 }

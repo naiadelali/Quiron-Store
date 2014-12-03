@@ -7,21 +7,20 @@ namespace Quiron.LojaVirtual.Web.Controllers
 {
     public class CategoriaController : Controller
     {
+        /*- Faça um contoller chamado Categoria que possua uma PartialViewResult chamada Menu.
+          - Faça uma busca nas categorias da classe Produto sem repetições.*/
         private ProdutoRepositorio _repositorio;
-        //
-        // GET: /Categoria/
-        public PartialViewResult Menu(string categoria=null)
+        public PartialViewResult Menu(string categoria = null)
         {
-            ViewBag.CategoriaSelecionada = categoria;
             _repositorio = new ProdutoRepositorio();
-
-            IEnumerable<string> categorias = _repositorio
-                .Produtos
+            ViewBag.CategoriaSelecionada = categoria;
+            var menu = _repositorio.Produtos
                 .Select(c => c.Categoria.Trim())
                 .Distinct()
                 .OrderBy(c => c);
 
-            return PartialView(categorias);
+            return PartialView(menu);
+
         }
 	}
 }
