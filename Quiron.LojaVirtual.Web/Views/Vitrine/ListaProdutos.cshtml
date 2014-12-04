@@ -3,11 +3,7 @@
            
 @foreach (var p in Model.Produtos)
 {
-    <div class="well">
-        <h3><strong>@p.Nome</strong></h3>
-        @p.Descricao
-        <h3 class="label label-primary pull-right">@p.Preco.ToString("C")</h3>
-    </div>
+    @Html.Partial("_ProdutoDetalhes",p)
 
 }
 
