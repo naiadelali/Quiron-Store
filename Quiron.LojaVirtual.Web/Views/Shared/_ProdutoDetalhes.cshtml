@@ -6,9 +6,9 @@
     @using (Html.BeginForm("Adicionar", "Carrinho"))
     {
         <div class="pull-right">
-            @Html.HiddenFor(x => x.ProdutoId)
+            @Html.HiddenFor(p => p.ProdutoId)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Comprar" />
+            <input type="submit" class="btn btn-default btn-success" value="Comprar"/>
         </div>
     }
     <h4><span class="text-justify">@Model.Descricao</span></h4>
